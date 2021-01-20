@@ -158,6 +158,7 @@
     <ClCompile Include="basic_operation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="basic_types.h" />
     <ClInclude Include="bigdata.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
