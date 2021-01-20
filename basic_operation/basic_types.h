@@ -8,6 +8,6 @@ public:
 };
 bool bit::carry(const bit& addition)
 {
-	if (value + addition.value > (LLONG_MAX * 2 - 1));
-	return false;
+	if (value + addition.value > LLONG_MAX)return true;
+	else return false;
 }
