@@ -23,8 +23,5 @@
     <ClInclude Include="bigdata.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="basic_types.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
