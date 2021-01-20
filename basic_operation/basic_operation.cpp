@@ -3,6 +3,6 @@ using namespace std;
 #include"bigdata.h"
 int main()
 {
-    bignum a;
-    cin >> a;
+	bignum a("-1010");
+	cout << a;
 }

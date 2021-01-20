@@ -21,12 +21,22 @@ istream& operator>>(istream& in, bignum& get)
 	string tmp;
 	unsigned i;
 	cin >> tmp;
-	if (tmp[0] == '-')get.sign = 1;
-	else get.sign = 0;
-	get.value.resize(tmp.size()+1);
-	for (i = 0; i < tmp.size(); i++)
+	get.value.resize(tmp.size() + 1);
+	if (tmp[0] == '-')
 	{
-		get.value[tmp.size() - i + 1] = tmp[i];
+		get.sign = 1;
+		for (i = 1; i < tmp.size(); i++)
+		{
+			get.value[tmp.size() - i + 1] = tmp[i];
+		}
+	}
+	else
+	{
+		get.sign = 0;
+		for (i = 0; i < tmp.size(); i++)
+		{
+			get.value[tmp.size() - i + 1] = tmp[i];
+		}
 	}
 	return in;
 }
@@ -35,10 +45,19 @@ ostream& operator<<(ostream& out, bignum get)
 	unsigned i;
 	if (get.sign == 0)
 	{
-		cout << get.value;
-		
+		for (i = get.value.size(); i >= 1; i--)
+		{
+			cout << get.value[i];
+		}
 	}
-	else cout << '-';
+	else
+	{
+		cout << '-';
+		for (i = get.value.size(); i >= 1; i--)
+		{
+			cout << get.value[i];
+		}
+	}
 	return out;
 }
 bignum::bignum()
@@ -49,11 +68,21 @@ bignum::bignum(string tmp)
 {
 	unsigned i;
 	cin >> tmp;
-	if (tmp[0] == '-')sign = 1;
-	else sign = 0;
 	value.resize(tmp.size() + 1);
-	for (i = 0; i < tmp.size(); i++)
+	if (tmp[0] == '-')
 	{
-		value[tmp.size() - i + 1] = tmp[i];
+		sign = 1;
+		for (i = 1; i < tmp.size(); i++)
+		{
+			value[tmp.size() - i + 1] = tmp[i];
+		}
+	}
+	else
+	{
+		sign = 0;
+		for (i = 0; i < tmp.size(); i++)
+		{
+			value[tmp.size() - i + 1] = tmp[i];
+		}
 	}
 }
