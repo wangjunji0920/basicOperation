@@ -26,21 +26,34 @@ istream& operator>>(istream& in, bignum& get)
 	get.value.resize(tmp.size()+1);
 	for (i = 0; i < tmp.size(); i++)
 	{
-
+		get.value[tmp.size() - i + 1] = tmp[i];
 	}
 	return in;
 }
 ostream& operator<<(ostream& out, bignum get)
 {
-	if (get.sign == 0)cout << get.value;
-	else cout << '-' << get.value;
+	unsigned i;
+	if (get.sign == 0)
+	{
+		cout << get.value;
+		
+	}
+	else cout << '-';
 	return out;
 }
 bignum::bignum()
 {
 	sign = 0;
 }
-bignum::bignum(string a)
+bignum::bignum(string tmp)
 {
-
+	unsigned i;
+	cin >> tmp;
+	if (tmp[0] == '-')sign = 1;
+	else sign = 0;
+	value.resize(tmp.size() + 1);
+	for (i = 0; i < tmp.size(); i++)
+	{
+		value[tmp.size() - i + 1] = tmp[i];
+	}
 }

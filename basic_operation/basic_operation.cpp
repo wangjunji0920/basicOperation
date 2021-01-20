@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 using namespace std;
+#include"bigdata.h"
 int main()
 {
-    cout << "Hello World!\n";
+    bignum a;
+    cin >> a;
 }
