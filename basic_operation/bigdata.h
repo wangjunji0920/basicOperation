@@ -12,6 +12,14 @@ public:
 	bignum(string);
 	friend istream& operator>>(istream& in, bignum&);
 	friend ostream& operator<<(ostream& out, bignum);
+	bignum operator+(const bignum&);
+	bignum operator-(const bignum&);
+	bool operator>(const bignum&);
+	bool operator<(const bignum&);
+	bool operator>=(const bignum&);
+	bool operator<=(const bignum&);
+	bool operator==(const bignum&);
+	bool operator!=(const bignum&);
 private:
 	bool sign;
 	string value;
@@ -67,7 +75,6 @@ bignum::bignum()
 bignum::bignum(string tmp)
 {
 	unsigned i;
-	cin >> tmp;
 	value.resize(tmp.size() + 1);
 	if (tmp[0] == '-')
 	{
@@ -85,4 +92,8 @@ bignum::bignum(string tmp)
 			value[tmp.size() - i + 1] = tmp[i];
 		}
 	}
+}
+bignum bignum::operator+(const bignum& addition)
+{
+	
 }
