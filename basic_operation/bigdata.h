@@ -5,26 +5,26 @@
 #include<iostream>
 #include<string>
 using namespace std;
-class bignum
+class basic_bignum
 {
 public:
-	bignum();
-	bignum(string);
-	friend istream& operator>>(istream& in, bignum&);
-	friend ostream& operator<<(ostream& out, bignum);
-	bignum operator+(const bignum&);
-	bignum operator-(const bignum&);
-	bool operator>(const bignum&);
-	bool operator<(const bignum&);
-	bool operator>=(const bignum&);
-	bool operator<=(const bignum&);
-	bool operator==(const bignum&);
-	bool operator!=(const bignum&);
+	basic_bignum();
+	basic_bignum(string);
+	friend istream& operator>>(istream& in, basic_bignum&);
+	friend ostream& operator<<(ostream& out, basic_bignum);
+	virtual basic_bignum operator+(const basic_bignum&);
+	virtual basic_bignum operator-(const basic_bignum&);
+	virtual bool operator>(const basic_bignum&);
+	virtual bool operator<(const basic_bignum&);
+	virtual bool operator>=(const basic_bignum&);
+	virtual bool operator<=(const basic_bignum&);
+	virtual bool operator==(const basic_bignum&);
+	virtual bool operator!=(const basic_bignum&);
 private:
 	bool sign;
 	string value;
 };
-istream& operator>>(istream& in, bignum& get)
+istream& operator>>(istream& in, basic_bignum& get)
 {
 	string tmp;
 	unsigned i;
@@ -48,7 +48,7 @@ istream& operator>>(istream& in, bignum& get)
 	}
 	return in;
 }
-ostream& operator<<(ostream& out, bignum get)
+ostream& operator<<(ostream& out, basic_bignum get)
 {
 	unsigned i;
 	if (get.sign == 0)
@@ -68,11 +68,11 @@ ostream& operator<<(ostream& out, bignum get)
 	}
 	return out;
 }
-bignum::bignum()
+basic_bignum::basic_bignum()
 {
 	sign = 0;
 }
-bignum::bignum(string tmp)
+basic_bignum::basic_bignum(string tmp)
 {
 	unsigned i;
 	value.resize(tmp.size() + 1);
@@ -92,4 +92,9 @@ bignum::bignum(string tmp)
 			value[tmp.size() - i + 1] = tmp[i];
 		}
 	}
+}
+inline basic_bignum basic_bignum::operator+(const basic_bignum&)
+{
+	
+	return basic_bignum();
 }

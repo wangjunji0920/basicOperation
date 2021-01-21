@@ -3,6 +3,6 @@
 using namespace std;
 int main()
 {
-	bignum a;
-	cin >> a;
+	basic_bignum a("1122334");
+	cout << a;
 }
