@@ -93,7 +93,3 @@ bignum::bignum(string tmp)
 		}
 	}
 }
-bignum bignum::operator+(const bignum& addition)
-{
-	
-}
