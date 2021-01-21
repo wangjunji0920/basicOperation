@@ -99,12 +99,12 @@ basic_bignum::basic_bignum(string tmp)
 		}
 	}
 }
-inline basic_bignum basic_bignum::operator+(const basic_bignum& adition)
+basic_bignum basic_bignum::operator+(const basic_bignum& adition)
 {
 	basic_bignum last;
 	if (value.size() > adition.value.size())
 	{
-		
+		if(value[value.size()])
 	}
 	return basic_bignum();
 }
