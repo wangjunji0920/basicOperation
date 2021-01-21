@@ -21,6 +21,7 @@ public:
 	virtual bool operator==(const basic_bignum&);
 	virtual bool operator!=(const basic_bignum&);
 private:
+	basic_bignum(unsigned long long size);
 	bool sign;
 	string value;
 };
@@ -72,6 +73,11 @@ basic_bignum::basic_bignum()
 {
 	sign = 0;
 }
+basic_bignum::basic_bignum(unsigned long long size)
+{
+	sign = 0;
+	value.resize(size);
+}
 basic_bignum::basic_bignum(string tmp)
 {
 	unsigned i;
@@ -93,8 +99,12 @@ basic_bignum::basic_bignum(string tmp)
 		}
 	}
 }
-inline basic_bignum basic_bignum::operator+(const basic_bignum&)
+inline basic_bignum basic_bignum::operator+(const basic_bignum& adition)
 {
-	
+	basic_bignum last;
+	if (value.size() > adition.value.size())
+	{
+		
+	}
 	return basic_bignum();
 }
