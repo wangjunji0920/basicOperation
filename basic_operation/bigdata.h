@@ -12,7 +12,7 @@ public:
 	basic_bignum(string);
 	friend istream& operator>>(istream& in, basic_bignum&);
 	friend ostream& operator<<(ostream& out, basic_bignum);
-	virtual basic_bignum operator+(const basic_bignum&);
+	virtual basic_bignum operator+(basic_bignum);
 	virtual basic_bignum operator-(const basic_bignum&);
 	virtual bool operator>(const basic_bignum&);
 	virtual bool operator<(const basic_bignum&);
@@ -99,12 +99,10 @@ basic_bignum::basic_bignum(string tmp)
 		}
 	}
 }
-basic_bignum basic_bignum::operator+(const basic_bignum& adition)
+basic_bignum basic_bignum::operator+(basic_bignum adition)
 {
 	basic_bignum last;
-	if (value.size() > adition.value.size())
-	{
-		if(value[value.size()])
-	}
+	value.resize(max(value.size(), adition.value.size()));
+	adition.value.resize(max(value.size(), adition.value.size()));
 	return basic_bignum();
 }
