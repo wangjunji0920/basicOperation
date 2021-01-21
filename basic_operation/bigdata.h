@@ -104,5 +104,6 @@ basic_bignum basic_bignum::operator+(basic_bignum adition)
 	basic_bignum last;
 	value.resize(max(value.size(), adition.value.size()));
 	adition.value.resize(max(value.size(), adition.value.size()));
+	last.value.resize(max(value.size(), adition.value.size()) + 1);
 	return basic_bignum();
 }
