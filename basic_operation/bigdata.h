@@ -12,14 +12,14 @@ public:
 	basic_bignum(string);
 	friend istream& operator>>(istream& in, basic_bignum&);
 	friend ostream& operator<<(ostream& out, basic_bignum);
-	virtual basic_bignum operator+(basic_bignum);
-	virtual basic_bignum operator-(const basic_bignum&);
-	virtual bool operator>(const basic_bignum&);
-	virtual bool operator<(const basic_bignum&);
-	virtual bool operator>=(const basic_bignum&);
-	virtual bool operator<=(const basic_bignum&);
-	virtual bool operator==(const basic_bignum&);
-	virtual bool operator!=(const basic_bignum&);
+	basic_bignum operator+(basic_bignum);
+	basic_bignum operator-(const basic_bignum&);
+	bool operator>(const basic_bignum&);
+	bool operator<(const basic_bignum&);
+	bool operator>=(const basic_bignum&);
+	bool operator<=(const basic_bignum&);
+	bool operator==(const basic_bignum&);
+	bool operator!=(const basic_bignum&);
 private:
 	basic_bignum(unsigned long long size);
 	bool sign;
